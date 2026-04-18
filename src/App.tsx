@@ -213,6 +213,21 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Footer */}
+      <footer className="relative z-10 py-12 border-t border-white/5 mt-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <span className="text-white font-display font-bold tracking-wider text-xl">NANN</span>
+            <p className="text-zinc-500 text-xs tracking-widest uppercase">© 2025 ALL RIGHTS RESERVED.</p>
+          </div>
+          <div className="flex gap-8">
+            <a href="mailto:1035705662@qq.com" className="text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-widest">Email</a>
+            <span className="text-zinc-600">/</span>
+            <span className="text-zinc-400 text-sm uppercase tracking-widest cursor-default">WeChat: Nanncy_nn</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

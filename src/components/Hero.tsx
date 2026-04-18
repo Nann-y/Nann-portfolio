@@ -54,14 +54,25 @@ export function Hero() {
             <p className="text-zinc-400 text-sm md:text-base font-medium tracking-[0.1em] mb-10 leading-loose">
               UI / UX 设计师 • AIGC 探索者
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(59,130,246,0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="rounded-full border border-white/30 bg-white/5 backdrop-blur-md text-white px-[32px] py-[16px] text-[11px] font-bold uppercase tracking-[0.3em] transition-all"
-            >
-              Explore Projects
-            </motion.button>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(59,130,246,0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="rounded-full border border-blue-500/50 bg-blue-500/10 backdrop-blur-md text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all"
+              >
+                Explore Projects
+              </motion.button>
+              <motion.a
+                href="/assets/full-profile.zip"
+                download="汪宇_UI设计师_简历与作品集.zip"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                className="rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white/80 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center"
+              >
+                Download Full Profile
+              </motion.a>
+            </div>
           </motion.div>
         </div>
       </div>
