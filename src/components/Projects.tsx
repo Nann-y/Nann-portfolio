@@ -11,7 +11,7 @@ const projects = [
     year: "2025-2026",
     desc: "End-to-end design of independent B2B websites, from strategy and wireframes to polished UI delivery.",
     image: "/assets/projects/images/01-preview.png",
-    detailImage: "/assets/details/01-b2b-web.png",
+    detailImage: "/assets/details/01-b2b-web.jpg",
   },
   {
     id: "02",
@@ -20,7 +20,7 @@ const projects = [
     year: "2024-2025",
     desc: "Leveraging AI-generated content to craft compelling visual campaigns and marketing assets.",
     image: "/assets/projects/images/02-preview.png",
-    detailImage: "/assets/details/02-aigc.png",
+    detailImage: "/assets/details/02-aigc.jpg",
   },
   {
     id: "03",
@@ -29,7 +29,7 @@ const projects = [
     year: "2024-2025",
     desc: "Full-cycle mobile application design — user research, interaction flows and pixel-perfect interfaces.",
     image: "/assets/projects/images/03-preview.png",
-    detailImage: "/assets/details/03-app.png",
+    detailImage: "/assets/details/03-app.jpg",
   },
   {
     id: "04",
@@ -38,7 +38,7 @@ const projects = [
     year: "2023-2024",
     desc: "Experimental 3D modeling, rendering and visual explorations pushing creative boundaries.",
     image: "/assets/projects/images/04-preview.png",
-    detailImage: "/assets/details/04-3d.png",
+    detailImage: "/assets/details/04-3d.jpg",
   },
 ];
 
