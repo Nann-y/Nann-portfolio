@@ -108,20 +108,8 @@ export function MoreWorks() {
                 
                 {/* 渐变层与标签 */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                  <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-1">
-                    {work.type === "ai" ? "AI EXPERIMENT" : work.type === "3d" ? "3D EXPLORATION" : "ARTWORK"}
-                  </span>
-                  <h4 className="text-white font-bold text-sm tracking-tight">
-                    {work.id.replace("-", " #").toUpperCase()}
-                  </h4>
                 </div>
 
-                {/* 常驻标签 (可选，参考图中有些标签是常驻的) */}
-                <div className="absolute top-4 left-4">
-                   <div className="px-3 py-1 rounded-full bg-black/30 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                     <span className="text-[8px] font-bold text-white uppercase tracking-tighter">{work.type}</span>
-                   </div>
-                </div>
               </div>
             </motion.div>
           ))}

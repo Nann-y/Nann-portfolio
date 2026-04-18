@@ -12,7 +12,7 @@ function WechatIcon({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full flex flex-col pt-32 pb-8 px-6 md:px-16 overflow-hidden">
+    <section id="home" className="relative min-h-screen w-full flex flex-col pt-32 pb-12 px-6 md:px-16 overflow-hidden">
       
       {/* 主体文字区 (Asymmetric Typography) */}
       <div className="flex-1 flex flex-col justify-center md:mt-[-5%] relative z-10 w-full max-w-7xl mx-auto">

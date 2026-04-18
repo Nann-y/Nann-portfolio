@@ -147,9 +147,9 @@ export function Projects() {
                         />
                         
                         {/* 底部信息栏 (叠加在图片底部) */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-6 md:px-10 py-6 md:py-8 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-4 md:px-10 py-5 md:py-8 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
                           <p className="text-zinc-200 text-xs md:text-sm max-w-md leading-relaxed font-light">
-                            «{project.desc}
+                            {project.desc}
                           </p>
                           <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -158,7 +158,7 @@ export function Projects() {
                               e.stopPropagation();
                               if (project.detailImage) setSelectedProject(project);
                             }}
-                            className="shrink-0 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+                            className="shrink-0 px-4 py-2 md:px-6 md:py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(59,130,246,0.4)]"
                           >
                             View Details
                             <ArrowUpRight className="w-3.5 h-3.5" />
