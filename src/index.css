@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --color-brand-blue: #3b82f6;
+  --color-brand-purple: #8b5cf6;
+  --color-brand-cyan: #06b6d4;
+  --color-bg-dark: #070b0a;
+}
+
+@layer base {
+  body {
+    @apply bg-transparent text-zinc-50 antialiased selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/[0.03] backdrop-blur-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)];
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400;
+}
+
+.heroSecondary {
+  @apply rounded-full border border-white/45 bg-transparent text-white backdrop-blur-xl;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Background Video Container */
+.bg-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  background: #070b0a;
+}
+
+.bg-video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+/* Background Overlays */
+.bg-overlay-left {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background: linear-gradient(to right, #070b0a 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.bg-overlay-bottom {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background: linear-gradient(to top, #070b0a 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Vertical Grid Lines */
+.grid-line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -4;
+  pointer-events: none;
+}
+
+/* Center Glow Effect */
+.center-glow {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 200px;
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.3) 0%, rgba(13, 148, 136, 0.1) 40%, transparent 70%);
+  filter: blur(25px);
+  z-index: -3;
+  pointer-events: none;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* ===== NANN Logo 动效系统 ===== */
+
+/* 字母基础样式 */
+.nann-letter {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: transparent;
+  background: linear-gradient(135deg, #93c5fd 0%, #ffffff 50%, #c084fc 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.4s ease;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .nann-letter {
+    font-size: 2.5rem;
+  }
+}
+
+/* 悬停时字母波浪效果 */
+.nann-logo:hover .nann-letter:nth-child(1) {
+  transform: translateY(-6px) rotate(-3deg);
+  transition-delay: 0s;
+}
+.nann-logo:hover .nann-letter:nth-child(2) {
+  transform: translateY(-10px) rotate(2deg);
+  transition-delay: 0.05s;
+}
+.nann-logo:hover .nann-letter:nth-child(3) {
+  transform: translateY(-6px) rotate(-2deg);
+  transition-delay: 0.1s;
+}
+.nann-logo:hover .nann-letter:nth-child(4) {
+  transform: translateY(-8px) rotate(3deg);
+  transition-delay: 0.15s;
+}
+
+/* 悬停时背景渐变流动 */
+.nann-logo:hover .nann-letter {
+  animation: nann-gradient-shift 2s ease infinite;
+}
+
+@keyframes nann-gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 旋转光圈装饰 */
+.nann-glow-ring {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(59, 130, 246, 0.5) 60deg,
+    transparent 120deg,
+    rgba(6, 182, 212, 0.4) 200deg,
+    transparent 280deg,
+    rgba(139, 92, 246, 0.3) 340deg,
+    transparent 360deg
+  );
+  animation: nann-ring-spin 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .nann-glow-ring {
+    width: 64px;
+    height: 64px;
+    left: -10px;
+  }
+}
+
+.nann-logo:hover .nann-glow-ring {
+  opacity: 0.7;
+}
+
+@keyframes nann-ring-spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* 中间镂空遮罩让光圈呈环状 */
+.nann-glow-ring::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+/* 背景光晕 */
+.nann-bg-glow {
+  position: absolute;
+  inset: -20px -16px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(6, 182, 212, 0.08) 50%,
+    transparent 80%
+  );
+  border-radius: 999px;
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.nann-logo:hover .nann-bg-glow {
+  opacity: 1;
+  animation: nann-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes nann-glow-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* 底部流光线条 */
+.nann-underline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(59, 130, 246, 0.8) 20%, 
+    rgba(6, 182, 212, 0.8) 50%, 
+    rgba(139, 92, 246, 0.6) 80%, 
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4), 0 0 24px rgba(6, 182, 212, 0.2);
+}
+
+.nann-logo:hover .nann-underline {
+  opacity: 1;
+  transform: scaleX(1);
+  animation: nann-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes nann-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== NANN Logo 动效系统结束 ===== */
+
+.masonry-grid {
+  column-count: 2;
+  column-gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .masonry-grid {
+    column-count: 4;
+    column-gap: 1.5rem;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-dot {
+  @apply absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#020617] z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)];
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Custom Scrollbar for Cards */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
