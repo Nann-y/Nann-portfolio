@@ -10,7 +10,7 @@ const projects = [
     category: "B2B WEB",
     year: "2025-2026",
     desc: "End-to-end design of independent B2B websites, from strategy and wireframes to polished UI delivery.",
-    image: "https://i.postimg.cc/HnpFJmh3/B-duan-du-li-zhan.png",
+    image: "/assets/projects/images/01-preview.png",
     detailImage: "/assets/details/01-b2b-web.png",
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     category: "AIGC",
     year: "2024-2025",
     desc: "Leveraging AI-generated content to craft compelling visual campaigns and marketing assets.",
-    image: "https://i.postimg.cc/vB1JFyND/Group-359442-1.png",
+    image: "/assets/projects/images/02-preview.png",
     detailImage: "/assets/details/02-aigc.png",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     category: "APP UI/UX",
     year: "2024-2025",
     desc: "Full-cycle mobile application design — user research, interaction flows and pixel-perfect interfaces.",
-    image: "https://i.postimg.cc/GpgW5tqD/feng-mian-1.png",
+    image: "/assets/projects/images/03-preview.png",
     detailImage: "/assets/details/03-app.png",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     category: "3D RENDER",
     year: "2023-2024",
     desc: "Experimental 3D modeling, rendering and visual explorations pushing creative boundaries.",
-    image: "https://i.postimg.cc/QMY2yC0h/feng-mian-1-(1).png",
+    image: "/assets/projects/images/04-preview.png",
     detailImage: "/assets/details/04-3d.png",
   },
 ];
