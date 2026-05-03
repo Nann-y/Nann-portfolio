@@ -124,9 +124,9 @@ export function About() {
           {/* 图片区 */}
           <div className={`relative w-full h-[240px] rounded-[1.5rem] overflow-hidden shrink-0 flex items-center justify-center ${isProfile ? '' : 'bg-white'}`}>
             {isProfile ? (
-              <img src={card.mainImage} alt={card.title} className="w-full h-full object-cover" />
+              <img src={card.mainImage} alt={card.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             ) : (
-              <img src={card.mainImage} alt={card.title} className="max-w-[120px] max-h-[80px] object-contain" />
+              <img src={card.mainImage} alt={card.title} loading="lazy" decoding="async" className="max-w-[120px] max-h-[80px] object-contain" />
             )}
           </div>
 

@@ -86,6 +86,8 @@ export function BackgroundVideo({
           src={imageSrc}
           alt=""
           aria-hidden="true"
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: imageOpacity }}
         />

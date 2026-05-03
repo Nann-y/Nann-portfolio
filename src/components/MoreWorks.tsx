@@ -93,6 +93,7 @@ export function MoreWorks() {
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   >
                     <source src={work.video} type="video/mp4" />
@@ -101,6 +102,8 @@ export function MoreWorks() {
                   <img 
                     src={work.image} 
                     alt={`Work ${work.id}`} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
@@ -160,6 +163,7 @@ export function MoreWorks() {
                   <img 
                     src={selectedWork.image} 
                     alt="Expanded view" 
+                    decoding="async"
                     className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-2xl"
                   />
                 )}

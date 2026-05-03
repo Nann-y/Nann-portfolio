@@ -142,6 +142,8 @@ export function Projects() {
                           transition={{ duration: 0.7, ease: "easeOut" }}
                           src={project.image}
                           alt={project.title}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
                         />
@@ -208,6 +210,8 @@ export function Projects() {
                 <img 
                   src={selectedProject.detailImage} 
                   alt={selectedProject.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto block"
                   referrerPolicy="no-referrer"
                 />
